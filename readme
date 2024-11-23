@@ -1,0 +1,161 @@
+# Real-Time Chat Application
+
+A full-stack real-time chat application built with Node.js, React, Socket.IO, and MongoDB. Users can join different chat rooms and exchange messages in real-time.
+
+## 🚀 Features
+
+- **Real-time messaging** using Socket.IO
+- **Multiple chat rooms** support
+- **Persistent message storage** using MongoDB
+- **Modern UI** with Tailwind CSS
+- **Responsive design** works on desktop and mobile
+
+## 🛠️ Tech Stack
+
+- **Frontend:**
+
+  - React
+  - Socket.IO Client
+  - Tailwind CSS
+
+- **Backend:**
+  - Node.js
+  - Express.js
+  - Socket.IO
+  - MongoDB
+  - Mongoose
+
+## 📦 Installation
+
+### Setting up the Backend
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/vaibhavBhardwaj24/chatApp.git
+cd chatApp
+```
+
+2. Install backend dependencies:
+
+```bash
+cd server
+npm install
+```
+
+3. Create a `.env` file in the server directory and add your MongoDB connection string:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+PORT=3000
+```
+
+4. Start the server:
+
+```bash
+npm start
+```
+
+### Setting up the Frontend
+
+1. Navigate to the client directory:
+
+```bash
+cd client
+```
+
+2. Install frontend dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+## 🔧 Configuration
+
+### Backend Configuration
+
+The backend server runs on port 3000 by default. You can modify the following in `server/index.js`:
+
+- CORS settings
+- Socket.IO configurations
+- MongoDB connection options
+
+### Frontend Configuration
+
+The frontend connects to `http://localhost:3000` by default. To change this:
+
+1. Update the `SOCKET_SERVER` constant in `client/src/App.jsx`
+2. Update CORS settings in the backend accordingly
+
+## 🚀 Usage
+
+1. Open your browser and navigate to `http://localhost:5173`
+2. Enter your username and a room ID
+3. Start chatting!
+
+## 📝 API Endpoints
+
+### Messages
+
+- `GET /messages/:room` - Get messages for a specific room
+  - Response: Array of message objects
+  ```json
+  [
+    {
+      "_id": "message_id",
+      "room": "room_id",
+      "sender": "username",
+      "content": "message content",
+      "timestamp": "2024-03-23T12:00:00.000Z"
+    }
+  ]
+  ```
+
+## 🔌 Socket Events
+
+### Client to Server
+
+- `join_room` - Join a specific chat room
+- `send_message` - Send a message to the current room
+- `disconnect` - Disconnect from the server
+
+### Server to Client
+
+- `receive_message` - Receive a new message
+- `error` - Receive error notifications
+
+## 💻 Development
+
+### Running Tests
+
+```bash
+npm test
+```
+
+### Building for Production
+
+```bash
+# Frontend
+cd client
+npm run build
+
+# Backend
+cd server
+npm run build
+```
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 👨‍💻 Author
+
+Vaibhav Bhardwaj
+
+- GitHub: [@vaibhavBhardwaj24](https://github.com/vaibhavBhardwaj24)
